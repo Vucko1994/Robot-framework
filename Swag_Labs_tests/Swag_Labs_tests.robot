@@ -3,7 +3,7 @@ Documentation   This file is filled with tests, and is linked to the steps file 
 ...             Cannot mix BDD and DDT(data-driven-test), that's why there is no scenario outline.
 ...             Test setup is used for prerequired steps and starting the browser.
 ...             Test Teardown closes the browser and takes a screenshot if the test fails.
-Resource        ../Looking_for_job_steps/Swag_Labs_steps.robot
+Resource        ../Swag_Labs_steps/Swag_Labs_steps.robot
 Resource        ../Test_Setup/Test_Setup.robot
 Test Setup      Browser startup
 Test Teardown   Close Browser Window

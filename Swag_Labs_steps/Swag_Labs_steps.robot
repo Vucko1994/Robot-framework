@@ -4,7 +4,7 @@ Documentation     A tests file with reusable keywords.
 ...               Keywords are linked to the tests file via Gherkin methodology.
 ...               The first keyword is used as the base for starting the tests.
 Library           SeleniumLibrary
-Resource          ../Looking_for_job_page/Swag_Labs_page.robot
+Resource          ../Swag_Labs_page/Swag_Labs_page.robot
 Resource          ../Test_Data/Test_Data.robot
 
 
