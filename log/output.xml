@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221006 15:57:59.526" rpa="false" schemaversion="3">
+<suite id="s1" name="Swag Labs tests" source="C:\Users\marko\Documents\Projects\Robot-test\Looking_for_job_tests\Swag_Labs_tests.robot">
+<test id="s1-t1" name="Check going to item page" line="29">
+<kw name="Browser startup" library="Test_Setup" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Website}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221006 15:57:59.844" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20221006 15:57:59.844" endtime="20221006 15:58:01.380"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221006 15:58:01.380" endtime="20221006 15:58:01.495"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${Delay}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221006 15:58:01.495" endtime="20221006 15:58:01.496"/>
+</kw>
+<status status="PASS" starttime="20221006 15:57:59.843" endtime="20221006 15:58:01.496"/>
+</kw>
+<kw name="Set Tags" library="BuiltIn">
+<arg>Regression</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<msg timestamp="20221006 15:58:01.496" level="INFO">Set tag 'Regression'.</msg>
+<status status="PASS" starttime="20221006 15:58:01.496" endtime="20221006 15:58:01.496"/>
+</kw>
+<kw name="Given User is on" library="Swag_Labs_steps">
+<arg>"LoginPage"</arg>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<arg>${page}=="LoginPage"</arg>
+<arg>Title Should Be</arg>
+<arg>Swag Labs</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Swag Labs</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20221006 15:58:02.502" level="INFO">Page title is 'Swag Labs'.</msg>
+<status status="PASS" starttime="20221006 15:58:01.497" endtime="20221006 15:58:02.502"/>
+</kw>
+<msg timestamp="20221006 15:58:02.502" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20221006 15:58:01.497" endtime="20221006 15:58:02.503"/>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<arg>${page}=="LoginPage"</arg>
+<arg>User is on Homepage</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20221006 15:58:02.503" endtime="20221006 15:58:02.503"/>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<arg>${page}=="Homepage"</arg>
+<arg>User is logged in</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20221006 15:58:02.503" endtime="20221006 15:58:02.503"/>
+</kw>
+<status status="PASS" starttime="20221006 15:58:01.497" endtime="20221006 15:58:02.503"/>
+</kw>
+<kw name="And Insert credentials and log in" library="Swag_Labs_steps">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${usernameInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221006 15:58:02.504" level="INFO">Typing text 'standard_user' into text field 'xpath://input[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20221006 15:58:02.504" endtime="20221006 15:58:05.612"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${passwordInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221006 15:58:05.613" level="INFO">Typing text 'secret_sauce' into text field 'xpath://input[@id="password"]'.</msg>
+<status status="PASS" starttime="20221006 15:58:05.612" endtime="20221006 15:58:08.720"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221006 15:58:08.720" level="INFO">Clicking element 'xpath://input[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20221006 15:58:08.720" endtime="20221006 15:58:10.833"/>
+</kw>
+<status status="PASS" starttime="20221006 15:58:02.504" endtime="20221006 15:58:10.833"/>
+</kw>
+<kw name="When User clicks on item" library="Swag_Labs_steps">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${backpackItem}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221006 15:58:10.834" level="INFO">Clicking element 'xpath://img[@alt='Sauce Labs Backpack']'.</msg>
+<status status="PASS" starttime="20221006 15:58:10.834" endtime="20221006 15:58:12.906"/>
+</kw>
+<status status="PASS" starttime="20221006 15:58:10.833" endtime="20221006 15:58:12.906"/>
+</kw>
+<kw name="Then User is on product page" library="Swag_Labs_steps">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>https://www.saucedemo.com/inventory-item.html?id=4</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221006 15:58:12.907" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg timestamp="20221006 15:58:12.908" level="INFO">Verifying element 'Get Location' contains exact text 'https://www.saucedemo.com/inventory-item.html?id=4'.</msg>
+<msg timestamp="20221006 15:58:15.204" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221006 15:58:15.204" level="FAIL">Element with locator 'Get Location' not found.</msg>
+<status status="FAIL" starttime="20221006 15:58:12.907" endtime="20221006 15:58:15.206"/>
+</kw>
+<status status="FAIL" starttime="20221006 15:58:12.906" endtime="20221006 15:58:15.207"/>
+</kw>
+<kw name="Close Browser Window" library="Test_Setup" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221006 15:58:15.208" endtime="20221006 15:58:18.339"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Completed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221006 15:58:18.339" endtime="20221006 15:58:18.340"/>
+</kw>
+<status status="PASS" starttime="20221006 15:58:15.208" endtime="20221006 15:58:18.340"/>
+</kw>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20221006 15:57:59.843" endtime="20221006 15:58:18.340">Element with locator 'Get Location' not found.</status>
+</test>
+<doc>This file is filled with tests, and is linked to the steps file via Gherkin methodology.
+Cannot mix BDD and DDT(data-driven-test), that's why there is no scenario outline.
+Test setup is used for prerequired steps and starting the browser.
+Test Teardown closes the browser and takes a screenshot if the test fails.</doc>
+<status status="FAIL" starttime="20221006 15:57:59.529" endtime="20221006 15:58:18.341"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+<stat pass="0" fail="1" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Swag Labs tests">Swag Labs tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221006 15:58:12.907" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+</errors>
+</robot>
