@@ -33,3 +33,20 @@ Check going to item page
     And Insert credentials and log in
     When User clicks on item
     Then User is on product page
+
+Check adding to cart
+    Set Tags    Regression
+
+    Given User is on  "LoginPage"
+    And Insert credentials and log in
+    When User adds product to cart
+    Then Product can be found in cart
+
+Check ordering a product
+    Set Tags    Regression
+
+    Given User is on  "LoginPage"
+    And Insert credentials and log in
+    When User orders a product
+    Then User is on   "CheckoutPage"
+

@@ -34,10 +34,43 @@ User clicks on item
     Click Element    ${backpackItem}
 
 User is on product page
-    Element Text Should Be    ${url}    https://www.saucedemo.com/inventory-item.html?id=4
+    Element Text Should Be    ${productName}    Sauce Labs Backpack
+    Element Should Be Visible    ${backpackItem}
+
+User adds product to cart
+    Click Element    ${addToCartBtn}
+
+Product can be found in cart
+    Element Should Be Visible    ${removeBtn}
+    Element Text Should Be    ${removeBtn}    REMOVE
+    Click Element    ${cartBtn}
+    Element Should Be Visible    ${productNameInCart}
+    Element Text Should Be    ${productNameInCart}    Sauce Labs Backpack
+
+User orders a product
+    User adds product to cart
+    Product can be found in cart
+    Click Element    ${checkoutBtn}
+    Input Text    ${firstNameInput}    Marko
+    Input Text    ${lastNameInput}    Vuckovic
+    Input Text    ${zipCodeInput}    18000
+    Click Element    ${continueBtn}
+    Element Should Be Visible    ${productNameInCart}
+    Element Text Should Be    ${productNameInCart}    Sauce Labs Backpack
+    Click Element    ${finishBtn}
+
+User is on checkout page
+    Element Should Be Visible    ${ponyExpressImage}
+    Element Should Be Visible    ${completeHeader}
+    Element Text Should Be    ${completeHeader}    THANK YOU FOR YOUR ORDER
+    Element Should Be Visible    ${completeText}
+    Element Text Should Be    ${completeText}    Your order has been dispatched, and will arrive just as fast as the pony can get there!
+    Element Should Be Visible    ${backToProductsBtn}
+    Element Text Should Be    ${backToProductsBtn}    BACK HOME
 
 User is on
     [Arguments]     ${page}
     Run Keyword And Return If    ${page}=="LoginPage"            Title Should Be    Swag Labs
     Run Keyword And Return If    ${page}=="LoginPage"     User is on Homepage
     Run Keyword And Return If    ${page}=="Homepage"    User is logged in
+    Run Keyword And Return If    ${page}=="CheckoutPage"    User is on checkout page
